@@ -8,7 +8,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>SISGEFRAN - Administrador</title>
+<title>SISGEFRAN - Estoque</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="-1">
@@ -62,7 +62,11 @@
 											<!-- "About us" button -->
 											<script type="text/javascript">
 												AC_FL_RunContent( 'codebase','http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0','width','250','height','30','src','flash/item','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','flash/item','flashvars','xml_filename=menu.xml&item_text=Fornecedor&item_link=fornecedor.php&item_text_size=20&item_ajust=35&item_selected=0' ); //end AC code
-											</script>																										
+											</script>
+											<!-- "About us" button -->
+											<script type="text/javascript">
+												AC_FL_RunContent( 'codebase','http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0','width','250','height','30','src','flash/item','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','flash/item','flashvars','xml_filename=menu.xml&item_text=Estoque&item_link=estoque.php&item_text_size=20&item_ajust=35&item_selected=0' ); //end AC code
+											</script>																						
 																					
 											</td>
 									  </tr>
@@ -74,47 +78,46 @@
 									<td width="100%" style="padding:30px">
 									<div style="text-align: right; border: 0;"><?php echo "Usuário Logado: "."<b>".$_SESSION['nomeLogado']."</b>".", <a href=index.php style=text-decoration:none> (Sair)</a>" ?></div>
 									</table>
-									<h1><center>Menu para Manter Administrador</center></h1>
-									A tabela abaixo, lista os Administradores cadastrados no sistema.
-									<center><br><div style="border: 1px solid black; overflow: scroll; width: 530px; height: 150px;">
+									
+									<h1><center>Menu para Manter Estoque</center></h1>
+									A tabela abaixo, lista os produtos cadastrados no sistema.
+									<center><br><div style="border: 1px solid black; overflow: scroll; width: 500px; height: 150px;">
 										<?php
 
 										include("conectar.php");
 										
-										 $sql="SELECT * FROM usuario, administrador WHERE usuario.codUsuario=administrador.codAdm";
+										 $sql="SELECT * FROM produto";
 
 										 $result = mysql_query($sql);
-											
-												echo 
-												 "<table border='1'>
-												 <tr>
-													<th>Código</th>
-													<th>Nome</th>
-													<th>Endereço</th>
-													<th>Data de Nascimento</th>
-													<th>CPF</th>
-													<th>Telefone</th>
-													<th>Ação</th>
-												 </tr>";
 
-												 while($row = mysql_fetch_array($result))
-												 {
-													 echo "<tr>";
-													 echo "<td>" . $row['codUsuario'] . "</td>";
-													 echo "<td>" . $row['nome'] . "</td>";
-													 echo "<td>" . $row['endereco'] . "</td>";
-													 echo "<td>" . $row['datnasc'] . "</td>";
-													 echo "<td>" . $row['cpf'] . "</td>";
-													 echo "<td>" . $row['telefone'] . "</td>";
-													 echo "<td><a href='editarAdministrador.php?tipo=user&acao=edit&id=".$row['codUsuario']."'>Editar</a> <a href='excluirAdministrador.php?tipo=user&acao=deletar&id=".$row['codUsuario']."'>Excluir</a></td>";
-													 echo "</tr>";
-												 }
-												 echo "</table>";
-										
+										 echo 
+										 "<table border='1'>
+										 <tr>
+											<th>CodProduto</th>
+											<th>CodFornecedor</th>
+											<th>Nome do Produto</th>
+											<th>Preço</th>
+											<th>Quantidade</th>
+											<th>Ação</th>
+										 </tr>";
+
+										 while($row = mysql_fetch_array($result))
+										 {
+											 echo "<tr>";
+											 echo "<td>" . $row['codProduto'] . "</td>";
+											 echo "<td>" . $row['codFornecedor'] . "</td>";
+											 echo "<td>" . $row['nome'] . "</td>";
+											 echo "<td>" . $row['preço'] . "</td>";
+											 echo "<td>" . $row['qtd'] . "</td>";
+											 echo "<td><a href='editarProduto.php?tipo=user&acao=edit&id=".$row['codProduto']."'>Editar</a> <a href='excluirProduto.php?tipo=user&acao=deletar&id=".$row['codProduto']."'>Excluir</a></td>";
+											 echo "</tr>";
+										 }
+										 echo "</table>";
+
 										?>
 									</div></center>
 									<br>
-									<input type="submit" value="Cadastrar Novo Administrador" onclick="location.href= 'cadastrarAdministrador.php' ">
+									<input type="submit" value="Cadastrar Novo Produto" onclick="location.href= 'cadastrarProduto.php' ">
 									<br><br>									
 									</td>
 								</tr>

@@ -1,6 +1,7 @@
 <?php
 
 	session_start();
+	include("conectar.php");
 
 ?>
 
@@ -8,7 +9,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>SISGEFRAN - Contato</title>
+<title>SISGEFRAN - Vendas</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="-1">
@@ -19,24 +20,25 @@
 <script src="flash/jscripts/AC_ActiveX.js" type="text/javascript"></script>
 <script src="flash/jscripts/jquery142.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<link href="cssmenu/menu_assets/styles.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 7]>
   <link rel="stylesheet" type="text/css" href="css/stylesheetie6.css" />
 <![endif]-->
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >																																																																																																																																																																																																																																																																																																																																																																																																																																																								
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >					
 	<div id="holder">
-
-<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:20px; "> 
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																						 
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:20px; ">
   <tr> 
     <td align="center" valign="middle"> 
 		<table width="850" border="0" cellspacing="0" cellpadding="0" style="border-top: 10px #c8efff solid;"> 
 
 				<tr> 
 				  <td style="font-family:arial;font-size:8px;">
+					
 					<!-- Flash Intro Header -->
-<script type="text/javascript">AC_FL_RunContent( 'codebase','http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0','width','850','height','165','src','flash/header','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','flash/header','flashvars','xml_filename=header.xml&header_image_1=header_image_1.jpg&text_sup_y=50&text_inf_y=10' ); //end AC code</script><noscript>free template</noscript>																																																																																																																																																																																																																																																																																																																																																						  
-				  	
-				 	</td> 
+					<script type="text/javascript">AC_FL_RunContent( 'codebase','http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0','width','850','height','165','src','flash/header','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','flash/header','flashvars','xml_filename=header.xml&header_image_1=header_image_1.jpg&text_sup_y=50&text_inf_y=10' ); //end AC code</script><noscript>free template</noscript>																																																																																																																																																																																																																																																																																																																																																			
+							</td> 
 				</tr>
 				<tr> 
 				  <td width="100%">
@@ -69,64 +71,110 @@
 											<!-- "Contact" button -->								
 											<script type="text/javascript">
 												AC_FL_RunContent( 'codebase','http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0','width','250','height','30','src','flash/item','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','flash/item','flashvars','xml_filename=menu.xml&item_text=Contato&item_link=contato.php&item_text_size=20&item_ajust=35&item_selected=0' ); //end AC code
-											</script>																								
+											</script>																							
 																					
 											</td>
 									  </tr>
 									</table>
 								</td>
 								<td   style="background-color:#edfaff;">
-									<table width="548"  border="0" cellspacing="0" >
-									<tr>
+								<table width="548"  border="0" cellspacing="0" >
+								<tr>
 									<td width="100%" style="padding:30px">
 									<div style="text-align: right; border: 0;"><?php echo "Usuário Logado: "."<b>".$_SESSION['nomeLogado']."</b>".", <a href=index.php style=text-decoration:none> (Sair)</a>" ?></div>
-									<b>INFORMAÇÕES PARA CONTATO</b>
+									</table>
 									<br>
-									<p class="left"><strong>Frango Assado na Brasa</strong> <br/> 
-									Rua Otávio Lamartine, Jucurutu/RN, Centro, 211<br/> 
-									<strong>Celular</strong>: (84) 9951-1874<br/>
-									<strong>E-mail</strong>: <a href="mailto:vanusa-60@hotmail.com">vanusa-60@hotmail.com</a></p>
-									<div class="clearboth"></div>
-									<br/>						
-									<b>CONTATO VIA FORMULÁRIO</b>
-									<br><br>
-									<form method="post" action="contact.php">
-									<fieldset><legend>Suas Informações</legend>
-										<table>
-											<tr>
-											<td>Nome Completo: </td><td><font color="#FF0000">*</font> <input type="text" name="name" id="name" size="50" maxlength="100" ><br></td>
-											</tr>
-											<tr>
-											<td>Endereço de E-mail: </td><td><font color="#FF0000">*</font> <input type="text" name="email"  id="email" size="50" maxlength="100"><br></td>
-											</tr>
-											<tr>
-											<td>Telefone: </td><td><font color="#FF0000">*</font> <input type="text" name="telephone"  id="telephone" size="50" maxlength="100"><br></td>
-											</tr>
-										</table>
-									</fieldset>
-									<fieldset><legend>Sua Mensagem</legend>
-										<table>
-											<tr>
-											<td>Assunto: </td><td><font color="#FF0000">*</font> <input type="text" name="subject" id="subject" size="50" maxlength="100" ><br></td>
-											</tr>
-											<tr>
-											<td>Mensagem: </td><td><font color="#FF0000">*</font> <textarea type="text" name="message"  id="message" size="50" maxlength="100"></textarea><br></td>
-											</tr>
-										</table>									
-										<p><label class="text">&nbsp;</label></p>
-									</fieldset>
-									<center><p class="center"><input class="button" type="submit" value="Enviar"></p></center>
-									</form>
-											    
-								</table>			    
-								</td>
+									<div id='cssmenu'>
+									<ul>
+									   <li class='active'><a href='vendas.php'><span>Realizar Venda</span></a></li>
+									   <li><a href='alterarVenda.php'><span>Alterar Venda</span></a></li>
+									   <li><a href='cancelarVenda.php'><span>Cancelar Venda</span></a></li>
+									   <li class='last'><a href='fluxoEntrega.php'><span>Fluxo Entrega à Domicílio</span></a></li>
+									</ul>
+									</div>
+									
+									<h1><center>Menu Fluxo de Entrega</center></h1>
+									A tabela abaixo, lista de vendas cadastrados no sistema.
+									<center><br><div style="border: 1px solid black; overflow: scroll; width: 550px; height: 150px;">
+										<?php
+										
+										$status = 0;
+
+										$sql = "SELECT * FROM venda WHERE statusEntrega = '".$status."%'";
+
+										 $result = mysql_query($sql);
+
+										 echo 
+										 "<table border='1'>
+										 <tr>
+											<th>CodVenda</th>
+											<th>Funcionário</th>
+											<th>Produto</th>
+											<th>Nome Cliente</th>
+											<th>Data da Venda</th>
+											<th>Quantidade</th>
+											<th>Ação</th>
+										 </tr>";
+
+										 while($row = mysql_fetch_array($result))
+										 {
+										 
+											$sql2 = "SELECT * FROM cliente,usuario WHERE cliente.codCliente=usuario.codUsuario";
+
+											$result2 = mysql_query($sql2);
+											
+											while($row2 = mysql_fetch_array($result2)){
+												$codCliente = $row2['codUsuario'];
+												if ($codCliente == $row['codCliente']){
+													$row['codCliente'] = $row2['nome'];
+												}
+											}
+											
+											$sql3 = "SELECT * FROM produto";
+
+											$result3 = mysql_query($sql3);
+											
+											while($row3 = mysql_fetch_array($result3)){
+												$codProduto = $row3['codProduto'];
+												if ($codProduto == $row['codProduto']){
+													$row['codProduto'] = $row3['nome'];
+												}
+											}
+											
+											$sql4 = "SELECT * FROM funcionario,usuario WHERE funcionario.codFuncionario=usuario.codUsuario";
+
+											$result4 = mysql_query($sql4);
+											
+											while($row4 = mysql_fetch_array($result4)){
+												$codFuncionario = $row4['codFuncionario'];
+												if ($codFuncionario == $row['codFuncionario']){
+													$row['codFuncionario'] = $row4['nome'];
+												}
+											}
+											
+											echo "<tr>";
+											 echo "<td>" . $row['codVenda'] . "</td>";
+											 echo "<td>" . $row['codFuncionario'] . "</td>";
+											 echo "<td>" . $row['codProduto'] . "</td>";
+											 echo "<td>" . $row['codCliente'] . "</td>";
+											 echo "<td>" . $row['dataVenda'] . "</td>";
+											 echo "<td>" . $row['qtdVenda'] . "</td>";
+											 echo "<td><a href='confirmarEntrega.php?id=".$row['codVenda']."'>Confirmar Entrega</a></td>";
+											 echo "</tr>";
+										 }
+										 echo "</table>";
+
+										?>
+									</div></center>
+									<br>
+				
+									</td>
 								</tr>
 								</table>
-				  </td> 
-				</tr>				
+								</td> 
+						</tr>				
 				<tr> 
 				  <td style="font-family:arial;font-size:8px;">
-				  <!-- Flash footer -->		
 						<div id="copyright">Todos os direitos reservados. Proibida a reprodução total ou parcial do conteúdo deste sistema sem prévia autorização.</div>
 			  	  </td> 
 				</tr>								 
